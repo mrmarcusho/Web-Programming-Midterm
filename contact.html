@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="contact Pizza Days, pizza restaurant contact, feedback, customer service, reach us">
+    <meta name="description" content="Contact Pizza Days — send us a message, give feedback, or reach out for catering inquiries.">
+    <title>Contact Us - Pizza Days</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo-link">
+                <img src="images/logo.svg" alt="Pizza Days Logo">
+                <span class="logo-text">Pizza Days</span>
+            </a>
+            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="locations.html">Our Stores</a></li>
+                    <li><a href="order.html">Order Online</a></li>
+                    <li><a href="catering.html">Catering</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <div class="page-banner">
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you</p>
+    </div>
+
+    <!-- Contact Content -->
+    <section class="page-content">
+        <div class="contact-wrapper">
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm" novalidate>
+
+                    <!-- Text input -->
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="John Smith" required>
+                        <span class="error-msg">Please enter your full name.</span>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <span class="error-msg">Please enter a valid email address.</span>
+                    </div>
+
+                    <!-- Tel input -->
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(217) 555-0000">
+                        <span class="error-msg">Please enter a valid phone number.</span>
+                    </div>
+
+                    <!-- Select dropdown -->
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Select a subject --</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="feedback">Feedback</option>
+                            <option value="catering">Catering Request</option>
+                            <option value="careers">Careers</option>
+                            <option value="complaint">Complaint</option>
+                        </select>
+                        <span class="error-msg">Please select a subject.</span>
+                    </div>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+                        <span class="error-msg">Please enter your message.</span>
+                    </div>
+
+                    <!-- Radio buttons -->
+                    <div class="form-group">
+                        <label>Preferred Contact Method *</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="contactMethod" value="email" required>
+                                Email
+                            </label>
+                            <label>
+                                <input type="radio" name="contactMethod" value="phone">
+                                Phone
+                            </label>
+                            <label>
+                                <input type="radio" name="contactMethod" value="either">
+                                Either
+                            </label>
+                        </div>
+                        <span class="error-msg">Please select a preferred contact method.</span>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Have a question, suggestion, or just want to say hello? Fill out the form or reach us directly using the information below.</p>
+
+                <div class="contact-info-item">
+                    <strong>General Inquiries</strong>
+                    <span>info@pizzadays.com</span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Catering</strong>
+                    <span>catering@pizzadays.com</span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Careers</strong>
+                    <span>jobs@pizzadays.com</span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Main Office</strong>
+                    <span>123 Main Street, Springfield, IL 62701</span>
+                </div>
+
+                <div class="contact-info-item">
+                    <strong>Phone</strong>
+                    <span>(217) 555-0101</span>
+                </div>
+
+                <p class="mt-20">For store-specific questions, please visit our <a href="locations.html">store locations</a> page for direct phone numbers and hours.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <a href="index.html" class="footer-logo">
+                <img src="images/logo.svg" alt="Pizza Days Logo">
+                <span>Pizza Days</span>
+            </a>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="locations.html">Our Stores</a></li>
+                <li><a href="order.html">Order Online</a></li>
+                <li><a href="catering.html">Catering</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <p>&copy; 2026 Pizza Days. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" aria-label="Back to top">&#9650;</button>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>
