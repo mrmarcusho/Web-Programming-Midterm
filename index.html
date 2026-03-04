@@ -1,128 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="pizza, Pizza Days, restaurant, delivery, order pizza, best pizza, fresh pizza">
-    <meta name="description" content="Pizza Days - Fresh handmade pizza made with love. Order online or visit one of our locations.">
-    <title>Pizza Days - Fresh Handmade Pizza</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Internal stylesheet for slideshow-specific animation */
-        .slide {
-            animation: fadeIn 0.6s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="pizza, restaurant, delivery, Portland, handcrafted, Italian, Pizza Days, home">
+  <meta name="description" content="Pizza Days - Handcrafted pizza made with fresh ingredients since 2010. Order online or visit us in Portland.">
+  <title>Pizza Days | Handcrafted Pizza Since 2010</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Page-specific styles (internal stylesheet) -->
+  <style>
+    .home-features {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: center;
+      margin-top: 2rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+    .home-feature {
+      width: 33.333%;
+      padding: 1rem;
+    }
+    .home-feature-inner {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      height: 100%;
+      transition-property: transform, box-shadow;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      border-bottom: 3px solid #b91c1c;
+    }
+    .home-feature-inner:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+    .home-feature-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .home-feature-inner h3 {
+      color: #1a0a00;
+      margin-bottom: 0.5rem;
+    }
+    .home-feature-inner p {
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .reviews-grid {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+    }
+    .reviews-grid > * {
+      width: 33.333%;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .review-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      border-left: 4px solid #fbbf24;
+      transition-property: transform, box-shadow;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      height: 100%;
+    }
+    .review-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+    .review-stars {
+      color: #fbbf24;
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .review-card p {
+      color: #4a4a4a;
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .review-author {
+      font-weight: 600;
+      color: #1a0a00;
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      font-style: normal;
+    }
+    @media (max-width: 768px) {
+      .home-feature { width: 100%; }
+      .reviews-grid > * { width: 100%; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span class="logo-text">Pizza Days</span>
-            </a>
-            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="locations.html">Our Stores</a></li>
-                    <li><a href="order.html">Order Online</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Slideshow -->
-    <div class="hero-slideshow">
-        <div class="slide active">
-            <img src="images/hero1.jpg" alt="Delicious pepperoni pizza fresh from the oven">
-            <div class="slide-caption">
-                <h2>Handcrafted Pizza</h2>
-                <p>Made fresh daily with premium ingredients</p>
-            </div>
-        </div>
-        <div class="slide">
-            <img src="images/hero2.jpg" alt="Family enjoying Pizza Days together">
-            <div class="slide-caption">
-                <h2>Family Favorites</h2>
-                <p>Bringing families together one slice at a time</p>
-            </div>
-        </div>
-        <div class="slide">
-            <img src="images/hero3.jpg" alt="Fresh ingredients for our pizzas">
-            <div class="slide-caption">
-                <h2>Fresh Ingredients</h2>
-                <p>Locally sourced toppings and house-made dough</p>
-            </div>
-        </div>
-        <button class="slide-btn slide-prev" aria-label="Previous slide">&#10094;</button>
-        <button class="slide-btn slide-next" aria-label="Next slide">&#10095;</button>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Pizza Days Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Welcome Section -->
-    <section class="page-content">
-        <div class="welcome-section">
-            <h1>Welcome to Pizza Days</h1>
-            <p>Since 2005, we have been serving up the freshest, most delicious pizza in town. Every pie is handcrafted with love using our signature dough recipe and premium toppings. Whether you dine in, carry out, or order delivery, Pizza Days is your destination for an unforgettable pizza experience.</p>
-            <a href="order.html" class="btn">Order Online Now</a>
+  <!-- Hero Section (CSS background image via .hero class) -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Handcrafted Pizza, Made Fresh Daily</h1>
+      <p>The best pizza at the best price.</p>
+      <a href="menu.html" class="btn btn-primary">View Our Menu</a>
+      <a href="menu.html" class="btn btn-secondary" style="margin-left: 0.5rem;">Order Now</a>
+    </div>
+  </section>
+
+  <!-- Why Pizza Days -->
+  <section class="section">
+    <div class="section-title">
+      <h2>Why Pizza Days?</h2>
+    </div>
+    <div class="home-features">
+      <div class="home-feature">
+        <div class="home-feature-inner">
+          <img src="images/fresh-ingredients.jpg" alt="Fresh vegetables and ingredients" class="home-feature-img">
+          <h3>Fresh Ingredients</h3>
+          <p>The best pizza made from only fresh ingredients so that every pizza you get has the best quality.</p>
         </div>
-
-        <hr class="section-divider">
-
-        <!-- Features Section -->
-        <h2 class="text-center">Why Choose Pizza Days?</h2>
-        <div class="features">
-            <div class="feature-card">
-                <div class="icon">&#127829;</div>
-                <h3>Fresh Ingredients</h3>
-                <p>We source our ingredients locally and prepare everything from scratch daily. No frozen dough, no canned sauce — just real, fresh food.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">&#9201;</div>
-                <h3>Fast Delivery</h3>
-                <p>Hot pizza at your door in 30 minutes or less. Order online or by phone for quick and convenient delivery to your home or office.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">&#127881;</div>
-                <h3>Catering Available</h3>
-                <p>Hosting a party or event? We offer catering packages for groups of all sizes. Let us make your next gathering a hit.</p>
-            </div>
+      </div>
+      <div class="home-feature">
+        <div class="home-feature-inner">
+          <img src="images/wood-fired-oven.jpg" alt="Wood-fired pizza oven" class="home-feature-img">
+          <h3>Wood-Fired Oven</h3>
+          <p>Our brick oven hits 800&deg;F, which gives every pizza that slightly charred, crispy crust you can't get from a regular oven.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span>Pizza Days</span>
-            </a>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Our Stores</a></li>
-                <li><a href="order.html">Order Online</a></li>
-                <li><a href="catering.html">Catering</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <p>&copy; 2026 Pizza Days. All rights reserved.</p>
+      </div>
+      <div class="home-feature">
+        <div class="home-feature-inner">
+          <img src="images/pizza-delivery.jpg" alt="Pizza delivery on a bicycle" class="home-feature-img">
+          <h3>Fast Delivery</h3>
+          <p>We promise to get your pizza to you in 30 minutes or less. Orders over $25 get free delivery.</p>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" aria-label="Back to top">&#9650;</button>
+  <!-- Popular Picks -->
+  <section class="section" style="background: #fff;">
+    <div class="section-title">
+      <h2>Fan Favorites</h2>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <img src="images/pizza-margherita.jpg" alt="Classic Margherita Pizza" class="card-img">
+        <div class="card-body">
+          <h3>Classic Margherita</h3>
+          <p>San Marzano tomato sauce, fresh mozzarella, basil, extra virgin olive oil.</p>
+          <span class="card-price">$14.99</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/pizza-pepperoni.jpg" alt="Pepperoni Classico Pizza" class="card-img">
+        <div class="card-body">
+          <h3>Pepperoni Classico</h3>
+          <p>Tomato sauce, mozzarella, generous layers of premium pepperoni.</p>
+          <span class="card-price">$16.99</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/pizza-bbq-chicken.jpg" alt="BBQ Chicken Pizza" class="card-img">
+        <div class="card-body">
+          <h3>BBQ Chicken</h3>
+          <p>Grilled chicken, BBQ sauce, red onion, cilantro, smoked gouda.</p>
+          <span class="card-price">$17.99</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <a href="menu.html" class="btn btn-primary">See Full Menu</a>
+    </div>
+  </section>
 
-    <script src="js/main.js"></script>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>Pizza Days</h3>
+        <p>Handcrafted pizza made with love since 2010. Four locations across Portland.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>364 Boston Ave<br>Medford, MA</p>
+        <p>(781) 396-7800</p>
+        <p>hello@pizzadays.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+
 </body>
 </html>

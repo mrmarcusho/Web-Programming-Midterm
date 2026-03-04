@@ -1,73 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="pizza menu, Pizza Days menu, pizza prices, sides, drinks, desserts, order pizza">
-    <meta name="description" content="Browse the full Pizza Days menu. Pizzas, sides, drinks, and desserts — all made fresh.">
-    <title>Menu - Pizza Days</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="pizza menu, Italian food, pepperoni, margherita, sides, drinks, Pizza Days">
+  <meta name="description" content="Browse the full Pizza Days menu - handcrafted pizzas, fresh sides, and refreshing drinks.">
+  <title>Menu | Pizza Days</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span class="logo-text">Pizza Days</span>
-            </a>
-            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html" class="active">Menu</a></li>
-                    <li><a href="locations.html">Our Stores</a></li>
-                    <li><a href="order.html">Order Online</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Pizza Days Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Banner -->
-    <div class="page-banner">
-        <h1>Our Menu</h1>
-        <p>Fresh handmade pizza and more</p>
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <h1>Our Menu</h1>
+    <p>Handcrafted with the freshest ingredients, baked in our wood-fired oven</p>
+  </section>
+
+  <!-- Menu Content -->
+  <section class="section">
+
+    <!-- Pizza Section -->
+    <div class="menu-section" id="pizza-section">
+      <div class="section-title">
+        <h2>Pizzas</h2>
+      </div>
+      <p class="text-center mb-2">Choose your size: Small (10") &middot; Medium (12") &middot; Large (14")</p>
+      <div class="card-grid" id="pizza-grid">
+        <!-- Built by menu.js -->
+      </div>
     </div>
 
-    <!-- Menu Content — built dynamically by menu.js -->
-    <section class="page-content">
-        <div id="menu-container" class="menu-categories">
-            <p class="text-center">Loading menu...</p>
-        </div>
-    </section>
+    <!-- Sides Section -->
+    <div class="menu-section mt-2" id="sides-section">
+      <div class="section-title">
+        <h2>Sides</h2>
+      </div>
+      <div class="card-grid" id="sides-grid">
+        <!-- Built by menu.js -->
+      </div>
+    </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span>Pizza Days</span>
-            </a>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Our Stores</a></li>
-                <li><a href="order.html">Order Online</a></li>
-                <li><a href="catering.html">Catering</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <p>&copy; 2026 Pizza Days. All rights reserved.</p>
-        </div>
-    </footer>
+    <!-- Drinks Section -->
+    <div class="menu-section mt-2" id="drinks-section">
+      <div class="section-title">
+        <h2>Drinks</h2>
+      </div>
+      <div class="card-grid" id="drinks-grid">
+        <!-- Built by menu.js -->
+      </div>
+    </div>
+  </section>
 
-    <button class="back-to-top" aria-label="Back to top">&#9650;</button>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>Pizza Days</h3>
+        <p>Handcrafted pizza made with love since 2010. Four locations across Portland.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>364 Boston Ave<br>Medford, MA</p>
+        <p>(781) 396-7800</p>
+        <p>hello@pizzadays.com</p>
+      </div>
+    </div>
+  </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/menu.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/menu.js"></script>
+
 </body>
 </html>

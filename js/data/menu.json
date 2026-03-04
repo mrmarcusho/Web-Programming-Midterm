@@ -1,106 +1,98 @@
 {
-    "Pizzas": [
-        {
-            "name": "Classic Cheese",
-            "description": "Our signature hand-tossed crust with house-made marinara and a blend of mozzarella and provolone cheeses.",
-            "price": 12.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Pepperoni",
-            "description": "Loaded with premium pepperoni slices on top of our classic cheese pizza. A crowd favorite.",
-            "price": 14.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Meat Lovers",
-            "description": "Piled high with pepperoni, Italian sausage, bacon, and ham on our signature sauce.",
-            "price": 16.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Veggie Supreme",
-            "description": "Fresh bell peppers, mushrooms, onions, black olives, and tomatoes on a bed of mozzarella.",
-            "price": 15.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "BBQ Chicken",
-            "description": "Grilled chicken, red onions, and cilantro drizzled with smoky BBQ sauce.",
-            "price": 16.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Hawaiian",
-            "description": "Savory ham and sweet pineapple chunks over mozzarella cheese. A tropical twist on pizza.",
-            "price": 14.99,
-            "image": "images/pizza-bg.jpg"
-        }
-    ],
-    "Sides": [
-        {
-            "name": "Garlic Breadsticks",
-            "description": "Warm, buttery breadsticks brushed with garlic butter and sprinkled with parmesan.",
-            "price": 5.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Chicken Wings",
-            "description": "Crispy fried wings tossed in your choice of buffalo, BBQ, or garlic parmesan sauce.",
-            "price": 9.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Garden Salad",
-            "description": "Crisp romaine, tomatoes, cucumbers, red onions, and croutons with your choice of dressing.",
-            "price": 6.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Mozzarella Sticks",
-            "description": "Golden-fried mozzarella sticks served with marinara dipping sauce.",
-            "price": 7.49,
-            "image": "images/pizza-bg.jpg"
-        }
-    ],
-    "Drinks": [
-        {
-            "name": "Fountain Soda",
-            "description": "Choose from Coca-Cola, Sprite, Dr Pepper, Lemonade, or Iced Tea.",
-            "price": 2.49,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Bottled Water",
-            "description": "Refreshing 16oz bottled spring water.",
-            "price": 1.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Fresh Lemonade",
-            "description": "Hand-squeezed lemonade made with real lemons and a touch of sugar.",
-            "price": 3.49,
-            "image": "images/pizza-bg.jpg"
-        }
-    ],
-    "Desserts": [
-        {
-            "name": "Chocolate Brownie",
-            "description": "Rich, fudgy chocolate brownie topped with a drizzle of chocolate sauce.",
-            "price": 4.99,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Cinnamon Sticks",
-            "description": "Warm dough sticks dusted with cinnamon sugar and served with vanilla icing.",
-            "price": 5.49,
-            "image": "images/pizza-bg.jpg"
-        },
-        {
-            "name": "Cookie Dough Bites",
-            "description": "Bite-sized cookie dough pieces baked to perfection. Shareable and irresistible.",
-            "price": 5.99,
-            "image": "images/pizza-bg.jpg"
-        }
-    ]
+  "pizzas": [
+    {
+      "name": "Classic Margherita",
+      "description": "San Marzano tomato sauce, fresh mozzarella, basil, extra virgin olive oil",
+      "price": 14.99,
+      "image": "images/pizza-margherita.jpg",
+      "category": "pizza",
+      "popular": true
+    },
+    {
+      "name": "Pepperoni Classico",
+      "description": "Tomato sauce, mozzarella, generous layers of premium pepperoni",
+      "price": 16.99,
+      "image": "images/pizza-pepperoni.jpg",
+      "category": "pizza",
+      "popular": true
+    },
+    {
+      "name": "The Meat Lover",
+      "description": "Italian sausage, pepperoni, bacon, ham, tomato sauce, mozzarella",
+      "price": 18.99,
+      "image": "images/pizza-margherita.jpg",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "name": "Garden Veggie",
+      "description": "Bell peppers, mushrooms, red onion, black olives, tomatoes, mozzarella",
+      "price": 15.99,
+      "image": "images/pizza-margherita.jpg",
+      "category": "pizza",
+      "popular": false
+    },
+    {
+      "name": "BBQ Chicken",
+      "description": "Grilled chicken, BBQ sauce, red onion, cilantro, smoked gouda",
+      "price": 17.99,
+      "image": "images/pizza-pepperoni.jpg",
+      "category": "pizza",
+      "popular": true
+    },
+    {
+      "name": "Hawaiian",
+      "description": "Ham, pineapple, tomato sauce, mozzarella, a touch of jalapeño",
+      "price": 16.49,
+      "image": "images/pizza-margherita.jpg",
+      "category": "pizza",
+      "popular": false
+    }
+  ],
+  "sides": [
+    {
+      "name": "Garlic Breadsticks",
+      "description": "Fresh-baked breadsticks with roasted garlic butter and parmesan",
+      "price": 6.99,
+      "category": "side"
+    },
+    {
+      "name": "Caesar Salad",
+      "description": "Crisp romaine, house-made croutons, parmesan, creamy Caesar dressing",
+      "price": 8.99,
+      "category": "side"
+    },
+    {
+      "name": "Mozzarella Sticks",
+      "description": "Hand-breaded mozzarella with marinara dipping sauce",
+      "price": 7.99,
+      "category": "side"
+    },
+    {
+      "name": "Buffalo Wings",
+      "description": "Crispy wings tossed in house buffalo sauce, served with ranch",
+      "price": 10.99,
+      "category": "side"
+    }
+  ],
+  "drinks": [
+    {
+      "name": "Fountain Drinks",
+      "description": "Coca-Cola, Sprite, Dr Pepper, Lemonade",
+      "price": 2.49,
+      "category": "drink"
+    },
+    {
+      "name": "Italian Soda",
+      "description": "Sparkling water with your choice of fruit syrup and cream",
+      "price": 3.99,
+      "category": "drink"
+    },
+    {
+      "name": "Craft Root Beer",
+      "description": "Small-batch brewed root beer on tap",
+      "price": 3.49,
+      "category": "drink"
+    }
+  ]
 }

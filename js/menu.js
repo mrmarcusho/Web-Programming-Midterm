@@ -1,99 +1,97 @@
-// ===== menu.js — Loads menu from JSON, builds cards dynamically =====
+/* ==========================================================================
+   Pizza Days - Menu Page JavaScript
+   Loads menu items from JSON, builds cards, displays full menu
+   ========================================================================== */
 
-// Homegrown object constructor (Requirement 8d)
-function MenuItem(name, description, price, image) {
-    this.name = name;
-    this.description = description;
-    this.price = price;
-    this.image = image;
-}
+$(document).ready(function() {
 
-MenuItem.prototype.getFormattedPrice = function() {
-    return '$' + this.price.toFixed(2);
-};
+  // Array of JS objects for featured items (builds page content)
+  var featuredItems = [];
 
-MenuItem.prototype.createCard = function() {
-    var card = document.createElement('div');
-    card.className = 'menu-card';
+  // Inline menu data (also stored in js/data/menu.json)
+  var menuData = {
+    pizzas: [
+      { name: "Classic Margherita", description: "San Marzano tomato sauce, fresh mozzarella, basil, extra virgin olive oil", price: 14.99, image: "images/pizza-margherita.jpg", category: "pizza", popular: true },
+      { name: "Pepperoni Classico", description: "Tomato sauce, mozzarella, generous layers of premium pepperoni", price: 16.99, image: "images/pizza-pepperoni.jpg", category: "pizza", popular: true },
+      { name: "The Meat Lover", description: "Italian sausage, pepperoni, bacon, ham, tomato sauce, mozzarella", price: 18.99, image: "images/pizza-margherita.jpg", category: "pizza", popular: false },
+      { name: "Garden Veggie", description: "Bell peppers, mushrooms, red onion, black olives, tomatoes, mozzarella", price: 15.99, image: "images/pizza-margherita.jpg", category: "pizza", popular: false },
+      { name: "BBQ Chicken", description: "Grilled chicken, BBQ sauce, red onion, cilantro, smoked gouda", price: 17.99, image: "images/pizza-bbq-chicken.jpg", category: "pizza", popular: true },
+      { name: "Hawaiian", description: "Ham, pineapple, tomato sauce, mozzarella, a touch of jalape\u00f1o", price: 16.49, image: "images/pizza-margherita.jpg", category: "pizza", popular: false }
+    ],
+    sides: [
+      { name: "Garlic Breadsticks", description: "Fresh-baked breadsticks with roasted garlic butter and parmesan", price: 6.99, category: "side" },
+      { name: "Caesar Salad", description: "Crisp romaine, house-made croutons, parmesan, creamy Caesar dressing", price: 8.99, category: "side" },
+      { name: "Mozzarella Sticks", description: "Hand-breaded mozzarella with marinara dipping sauce", price: 7.99, category: "side" },
+      { name: "Buffalo Wings", description: "Crispy wings tossed in house buffalo sauce, served with ranch", price: 10.99, category: "side" }
+    ],
+    drinks: [
+      { name: "Fountain Drinks", description: "Coca-Cola, Sprite, Dr Pepper, Lemonade", price: 2.49, category: "drink" },
+      { name: "Italian Soda", description: "Sparkling water with your choice of fruit syrup and cream", price: 3.99, category: "drink" },
+      { name: "Craft Root Beer", description: "Small-batch brewed root beer on tap", price: 3.49, category: "drink" }
+    ]
+  };
 
-    card.innerHTML =
-        '<img src="' + this.image + '" alt="' + this.name + '">' +
-        '<div class="menu-card-body">' +
-            '<h3>' + this.name + '</h3>' +
-            '<p>' + this.description + '</p>' +
-            '<span class="price">' + this.getFormattedPrice() + '</span>' +
-        '</div>';
+  // Try loading from JSON file first, fall back to inline data
+  $.getJSON("js/data/menu.json", function(data) {
+    renderMenu(data);
+  }).fail(function() {
+    renderMenu(menuData);
+  });
 
-    return card;
-};
+  // Render the full menu from data
+  function renderMenu(data) {
+    buildMenuCards(data.pizzas, "#pizza-grid");
+    buildMenuCards(data.sides, "#sides-grid");
+    buildMenuCards(data.drinks, "#drinks-grid");
+    addFeaturedBadges(featuredItems);
+  }
 
+  // Function: Build menu cards from data array
+  function buildMenuCards(items, containerSelector) {
+    var container = $(containerSelector);
+    container.empty();
 
-// Build menu page from JSON data
-function buildMenu(menuData) {
-    var container = document.getElementById('menu-container');
-    if (!container) return;
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var card = $("<div>").addClass("card").attr("data-name", item.name);
 
-    container.innerHTML = '';
+      if (item.image) {
+        var img = $("<img>").addClass("card-img").attr("src", item.image).attr("alt", item.name);
+        card.append(img);
+      }
 
-    // Associative array / object for category display names (Requirement 8a)
-    var categoryLabels = {
-        'Pizzas': 'Our Pizzas',
-        'Sides': 'Sides & Appetizers',
-        'Drinks': 'Beverages',
-        'Desserts': 'Desserts'
-    };
+      var body = $("<div>").addClass("card-body");
+      body.append($("<h3>").text(item.name));
+      body.append($("<p>").text(item.description));
+      body.append($("<span>").addClass("card-price").text(formatCurrency(item.price)));
+      card.append(body);
 
-    // Loop through each category in the JSON (object keys)
-    var categories = Object.keys(menuData);
-
-    for (var c = 0; c < categories.length; c++) {
-        var categoryKey = categories[c];
-        var items = menuData[categoryKey]; // Array of JS objects (Requirement 8f)
-
-        // Create category section
-        var section = document.createElement('div');
-        section.className = 'category-section';
-
-        var heading = document.createElement('h2');
-        heading.textContent = categoryLabels[categoryKey] || categoryKey;
-        section.appendChild(heading);
-
-        var grid = document.createElement('div');
-        grid.className = 'menu-grid';
-
-        // Build cards from array of objects
-        for (var i = 0; i < items.length; i++) {
-            var item = new MenuItem(
-                items[i].name,
-                items[i].description,
-                items[i].price,
-                items[i].image
-            );
-            grid.appendChild(item.createCard()); // DOM manipulation (Requirement 8c)
-        }
-
-        section.appendChild(grid);
-        container.appendChild(section);
+      container.append(card);
     }
-}
+  }
 
+  // Function: Add badges to featured items
+  function addFeaturedBadges(featured) {
+    for (var i = 0; i < featured.length; i++) {
+      var item = featured[i];
+      var card = $(".card[data-name='" + item.name + "'] .card-body");
+      if (card.length) {
+        var badge = $("<span>")
+          .css({
+            display: "inline-block",
+            background: "#b91c1c",
+            color: "#fff",
+            padding: "0.2rem 0.6rem",
+            borderRadius: "12px",
+            fontSize: "0.75rem",
+            fontWeight: "600",
+            marginTop: "0.4rem",
+            marginRight: "0.3rem"
+          })
+          .text(item.badge);
+        card.append(badge);
+      }
+    }
+  }
 
-// Fetch menu data from external JSON file (Requirement 8e)
-(function() {
-    var container = document.getElementById('menu-container');
-    if (!container) return;
-
-    fetch('js/data/menu.json')
-        .then(function(response) {
-            if (!response.ok) {
-                throw new Error('Failed to load menu data');
-            }
-            return response.json();
-        })
-        .then(function(data) {
-            buildMenu(data);
-        })
-        .catch(function(error) {
-            container.innerHTML = '<p class="text-center">Unable to load menu. Please try again later.</p>';
-        });
-})();
+});

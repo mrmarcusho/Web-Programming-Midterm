@@ -1,100 +1,139 @@
-// ===== main.js — Shared functionality: slideshow, mobile nav, back-to-top =====
+/* ==========================================================================
+   Pizza Days - Main JavaScript
+   Handles: Navigation, shared UI, utility functions
+   ========================================================================== */
 
-// ---- Mobile Navigation Toggle ----
-(function() {
-    var hamburger = document.querySelector('.hamburger');
-    var navList = document.querySelector('.main-nav ul');
+// ---- Associative Arrays (Object Literals) ----
+var siteConfig = {
+  siteName: "Pizza Days",
+  tagline: "Handcrafted Pizza Since 2010",
+  phone: "(503) 555-0142",
+  email: "hello@pizzadays.com",
+  deliveryFee: 3.99,
+  freeDeliveryMin: 25.00
+};
 
-    if (hamburger && navList) {
-        hamburger.addEventListener('click', function() {
-            navList.classList.toggle('open');
-        });
+var businessHours = {
+  monday: "11:00 AM - 10:00 PM",
+  tuesday: "11:00 AM - 10:00 PM",
+  wednesday: "11:00 AM - 10:00 PM",
+  thursday: "11:00 AM - 10:00 PM",
+  friday: "11:00 AM - 12:00 AM",
+  saturday: "11:00 AM - 12:00 AM",
+  sunday: "12:00 PM - 9:00 PM"
+};
 
-        // Close menu when a link is clicked
-        var navLinks = navList.querySelectorAll('a');
-        for (var i = 0; i < navLinks.length; i++) {
-            navLinks[i].addEventListener('click', function() {
-                navList.classList.remove('open');
-            });
-        }
+var socialLinks = {
+  facebook: "https://facebook.com/pizzadays",
+  instagram: "https://instagram.com/pizzadays",
+  twitter: "https://twitter.com/pizzadays"
+};
+
+// ---- Homegrown Objects (Constructor Functions) ----
+function MenuItem(name, price, category, description) {
+  this.name = name;
+  this.price = price;
+  this.category = category;
+  this.description = description;
+  this.formatPrice = function() {
+    return "$" + this.price.toFixed(2);
+  };
+  this.getInfo = function() {
+    return this.name + " (" + this.category + ") - " + this.formatPrice();
+  };
+}
+
+function Customer(name, email, phone) {
+  this.name = name;
+  this.email = email;
+  this.phone = phone;
+  this.orders = [];
+  this.addOrder = function(order) {
+    this.orders.push(order);
+  };
+  this.getOrderCount = function() {
+    return this.orders.length;
+  };
+}
+
+function Review(author, rating, text, date) {
+  this.author = author;
+  this.rating = rating;
+  this.text = text;
+  this.date = date;
+  this.getStars = function() {
+    var stars = "";
+    for (var i = 0; i < 5; i++) {
+      stars += i < this.rating ? "\u2605" : "\u2606";
     }
-})();
+    return stars;
+  };
+  this.getSummary = function() {
+    return this.getStars() + " - " + this.author;
+  };
+}
 
+// ---- Utility Functions ----
+function formatCurrency(amount) {
+  return "$" + parseFloat(amount).toFixed(2);
+}
 
-// ---- Image Slideshow ----
-(function() {
-    var slides = document.querySelectorAll('.hero-slideshow .slide');
-    var prevBtn = document.querySelector('.slide-prev');
-    var nextBtn = document.querySelector('.slide-next');
+function validateEmail(email) {
+  var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return pattern.test(email);
+}
 
-    if (slides.length === 0) return;
+function validatePhone(phone) {
+  var cleaned = phone.replace(/\D/g, "");
+  return cleaned.length === 10 || cleaned.length === 11;
+}
 
-    var currentIndex = 0;
-    var autoInterval = null;
+// ---- DOM Manipulation ----
+$(document).ready(function() {
 
-    function showSlide(index) {
-        // Wrap around
-        if (index >= slides.length) index = 0;
-        if (index < 0) index = slides.length - 1;
+  // Mobile nav toggle
+  $(".nav-toggle").on("click", function() {
+    $(".main-nav ul").toggleClass("open");
+    var icon = $(this).text() === "\u2630" ? "\u2715" : "\u2630";
+    $(this).text(icon);
+  });
 
-        for (var i = 0; i < slides.length; i++) {
-            slides[i].classList.remove('active');
-        }
-        slides[index].classList.add('active');
-        currentIndex = index;
+  // Close mobile nav when link clicked
+  $(".main-nav a").on("click", function() {
+    $(".main-nav ul").removeClass("open");
+    $(".nav-toggle").text("\u2630");
+  });
+
+  // Highlight current page in nav
+  var currentPage = window.location.pathname.split("/").pop() || "index.html";
+  $(".main-nav a").each(function() {
+    var href = $(this).attr("href");
+    if (href === currentPage) {
+      $(this).addClass("active");
     }
+  });
 
-    function nextSlide() {
-        showSlide(currentIndex + 1);
+  // Smooth scroll for anchor links
+  $('a[href^="#"]').on("click", function(e) {
+    var target = $(this.getAttribute("href"));
+    if (target.length) {
+      e.preventDefault();
+      $("html, body").animate({ scrollTop: target.offset().top - 80 }, 500);
     }
+  });
 
-    function prevSlide() {
-        showSlide(currentIndex - 1);
+  // Modal close functionality
+  $(".modal-overlay").on("click", function(e) {
+    if ($(e.target).hasClass("modal-overlay")) {
+      $(this).removeClass("active");
     }
+  });
 
-    function startAutoRotate() {
-        autoInterval = setInterval(nextSlide, 4000);
-    }
+  $(".modal-close").on("click", function() {
+    $(this).closest(".modal-overlay").removeClass("active");
+  });
 
-    function resetAutoRotate() {
-        clearInterval(autoInterval);
-        startAutoRotate();
-    }
+  // Build footer year
+  $("#footer-year").text(new Date().getFullYear());
 
-    if (nextBtn) {
-        nextBtn.addEventListener('click', function() {
-            nextSlide();
-            resetAutoRotate();
-        });
-    }
-
-    if (prevBtn) {
-        prevBtn.addEventListener('click', function() {
-            prevSlide();
-            resetAutoRotate();
-        });
-    }
-
-    // Start auto-rotation
-    startAutoRotate();
-})();
-
-
-// ---- Back to Top Button ----
-(function() {
-    var backToTopBtn = document.querySelector('.back-to-top');
-
-    if (!backToTopBtn) return;
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
-
-    backToTopBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-})();
+});
