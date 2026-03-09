@@ -1,136 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Pizza Days locations, pizza near me, Pizza Days stores, pizza restaurant locations">
-    <meta name="description" content="Find a Pizza Days location near you. Visit one of our four stores for dine-in, carry out, or delivery.">
-    <title>Our Stores - Pizza Days</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Pizza Days locations, Tufts pizza, Medford pizza, delivery, campus delivery">
+  <meta name="description" content="Find Pizza Days delivery locations near Tufts University. We deliver across campus.">
+  <title>Locations | Pizza Days</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span class="logo-text">Pizza Days</span>
-            </a>
-            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="locations.html" class="active">Our Stores</a></li>
-                    <li><a href="order.html">Order Online</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Banner -->
-    <div class="page-banner">
-        <h1>Our Stores</h1>
-        <p>Find a Pizza Days location near you</p>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Pizza Days Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Locations -->
-    <section class="page-content">
-        <div class="locations-grid">
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <h1>Our Locations</h1>
+    <p>Delivering across the Tufts campus and Medford area</p>
+  </section>
 
-            <!-- Location 1 -->
-            <div class="location-card">
-                <img src="images/location1.jpg" alt="Pizza Days Downtown store">
-                <div class="location-card-body">
-                    <h3>Downtown</h3>
-                    <p>123 Main Street, Springfield, IL 62701</p>
-                    <p>Phone: (217) 555-0101</p>
-                    <span class="hours-label">Hours:</span>
-                    <ul>
-                        <li>Mon - Thu: 10:00 AM - 10:00 PM</li>
-                        <li>Fri - Sat: 10:00 AM - 11:00 PM</li>
-                        <li>Sunday: 11:00 AM - 9:00 PM</li>
-                    </ul>
-                </div>
-            </div>
+  <!-- Locations Grid -->
+  <section class="section">
+    <h2>Find Us Near You</h2>
+    <h3>We deliver to these Tufts locations and surrounding areas</h3>
+    <div class="card-grid mt-1" id="locations-container">
+      <!-- Built by locations.js from JSON -->
+    </div>
+  </section>
 
-            <!-- Location 2 -->
-            <div class="location-card">
-                <img src="images/location2.jpg" alt="Pizza Days Westside store">
-                <div class="location-card-body">
-                    <h3>Westside</h3>
-                    <p>456 Oak Avenue, Springfield, IL 62704</p>
-                    <p>Phone: (217) 555-0202</p>
-                    <span class="hours-label">Hours:</span>
-                    <ul>
-                        <li>Mon - Thu: 10:00 AM - 10:00 PM</li>
-                        <li>Fri - Sat: 10:00 AM - 11:00 PM</li>
-                        <li>Sunday: 11:00 AM - 9:00 PM</li>
-                    </ul>
-                </div>
-            </div>
+  <!-- General Info -->
+  <section class="section" style="background: #fff;">
+    <div class="section-title">
+      <h2>Visit Us Today</h2>
+    </div>
+    <div class="two-col">
+      <div>
+        <h3>What to Expect</h3>
+        <ul class="feature-list">
+          <li>Delivery and takeout available</li>
+          <li>We deliver to all Tufts dorms and campus buildings</li>
+          <li>Online ordering for quick pickup</li>
+          <li>Large group and party orders welcome</li>
+          <li>Late-night delivery until 3 AM</li>
+        </ul>
+      </div>
+      <div>
+        <h3>General Hours</h3>
+        <ul class="feature-list">
+          <li>Monday - Sunday: 11am - 3am</li>
+        </ul>
+        <p class="mt-1" style="color: #717171; font-size: 0.9rem;">We're open late every night — perfect for those late-night study sessions.</p>
+      </div>
+    </div>
+  </section>
 
-            <!-- Location 3 -->
-            <div class="location-card">
-                <img src="images/location3.jpg" alt="Pizza Days Lakewood store">
-                <div class="location-card-body">
-                    <h3>Lakewood</h3>
-                    <p>789 Lake Drive, Springfield, IL 62707</p>
-                    <p>Phone: (217) 555-0303</p>
-                    <span class="hours-label">Hours:</span>
-                    <ul>
-                        <li>Mon - Thu: 11:00 AM - 9:00 PM</li>
-                        <li>Fri - Sat: 11:00 AM - 10:00 PM</li>
-                        <li>Sunday: 12:00 PM - 8:00 PM</li>
-                    </ul>
-                </div>
-            </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="index.html" class="logo-link"><img src="images/logo.svg" alt="Pizza Days Logo" style="height:40px; margin-bottom:0.5rem;"></a>
+        <h3>Pizza Days</h3>
+        <p>Handcrafted pizza made with love since 2005. Delivering across the Tufts campus.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>364 Boston Ave<br>Medford, MA 02155</p>
+        <p>(781) 396-7800</p>
+        <p>hello@pizzadays.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="footer-year"></span> Pizza Days. All rights reserved.
+    </div>
+  </footer>
 
-            <!-- Location 4 -->
-            <div class="location-card">
-                <img src="images/location4.jpg" alt="Pizza Days Northgate store">
-                <div class="location-card-body">
-                    <h3>Northgate</h3>
-                    <p>321 Elm Boulevard, Springfield, IL 62702</p>
-                    <p>Phone: (217) 555-0404</p>
-                    <span class="hours-label">Hours:</span>
-                    <ul>
-                        <li>Mon - Thu: 10:00 AM - 10:00 PM</li>
-                        <li>Fri - Sat: 10:00 AM - 12:00 AM</li>
-                        <li>Sunday: 11:00 AM - 9:00 PM</li>
-                    </ul>
-                </div>
-            </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/locations.js"></script>
 
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span>Pizza Days</span>
-            </a>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Our Stores</a></li>
-                <li><a href="order.html">Order Online</a></li>
-                <li><a href="catering.html">Catering</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <p>&copy; 2026 Pizza Days. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <button class="back-to-top" aria-label="Back to top">&#9650;</button>
-
-    <script src="js/main.js"></script>
 </body>
 </html>

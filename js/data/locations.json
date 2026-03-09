@@ -1,0 +1,36 @@
+{
+  "locations": [
+    {
+      "name": "Medford / Hillside",
+      "address": "364 Boston Ave, Medford, MA 02155",
+      "phone": "(781) 396-7800",
+      "hours": "Mon-Sun: 11am-3am",
+      "image": "images/location1.jpg",
+      "mapUrl": "#"
+    },
+    {
+      "name": "Carmichael Hall",
+      "address": "200 Packard Ave, Medford, MA 02155",
+      "phone": "(781) 396-7800",
+      "hours": "Mon-Sun: 11am-3am",
+      "image": "images/location2.jpg",
+      "mapUrl": "#"
+    },
+    {
+      "name": "Dewick-MacPhie Hall",
+      "address": "25 Latin Way, Medford, MA 02155",
+      "phone": "(781) 396-7800",
+      "hours": "Mon-Sun: 11am-3am",
+      "image": "images/location3.jpg",
+      "mapUrl": "#"
+    },
+    {
+      "name": "South Hall",
+      "address": "105 College Ave, Medford, MA 02155",
+      "phone": "(781) 396-7800",
+      "hours": "Mon-Sun: 11am-3am",
+      "image": "images/location4.jpg",
+      "mapUrl": "#"
+    }
+  ]
+}

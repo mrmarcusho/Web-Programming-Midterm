@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="about Pizza Days, our story, Portland pizza, wood-fired, family restaurant">
-  <meta name="description" content="Learn about Pizza Days - our story, our values, and our commitment to handcrafted pizza.">
-  <title>About Us | Pizza Days</title>
+  <meta name="keywords" content="pizza specials, deals, weekly specials, discounts, Pizza Days, Portland pizza deals">
+  <meta name="description" content="Check out this week's Pizza Days specials and deals. New offers every day of the week!">
+  <title>Weekly Specials | Pizza Days</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -34,20 +34,18 @@
 
   <!-- Page Banner -->
   <section class="page-banner">
-    <h1>About Us</h1>
+    <h1>Weekly Specials</h1>
+    <p>Fresh deals every day of the week. Do not miss out!</p>
   </section>
 
-  <!-- About Content -->
+  <!-- Specials Banner -->
   <section class="section">
-    <h2>Our Story</h2>
-    <p>Pizza Days has been serving up fresh, hot pizza since 2005, when the first location opened in Burlington, MA. Our Medford shop sits right across the street from Tufts University on Boston Avenue, making us the go-to spot for students, families, and late-night cravers alike.</p>
+    <h2>Daily Deals</h2>
+    <h3>Something special every day of the week</h3>
 
-    <h2>Always Open, Always Fresh</h2>
-    <p>We're open until 3 AM every night because we believe great pizza shouldn't have a curfew. Whether it's a loaded Meat Lover's pie, a crispy calzone, or a classic cheese slice, everything is made fresh and delivered fast.</p>
-
-    <h2>Giving Back</h2>
-    <h3>School Lunch Program</h3>
-    <p>Beyond our storefront, Pizza Days also partners with local schools through our School Lunch Program, delivering meals that meet national nutritional guidelines. From midnight runs to midday lunches, we're proud to feed our community.</p>
+    <div class="card-grid mt-1" id="specials-container">
+      <!-- Built by specials.js -->
+    </div>
   </section>
 
   <!-- Footer -->
@@ -70,15 +68,19 @@
       </div>
       <div class="footer-col">
         <h3>Contact</h3>
-        <p>364 Boston Ave<br>Medford, MA</p>
-        <p>(781) 396-7800</p>
+        <p>142 Main Street<br>Portland, OR 97201</p>
+        <p>(503) 555-0142</p>
         <p>hello@pizzadays.com</p>
       </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="footer-year"></span> Pizza Days. All rights reserved.
     </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/specials.js"></script>
 
 </body>
 </html>

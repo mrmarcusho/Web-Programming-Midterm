@@ -46,27 +46,23 @@ $(document).ready(function() {
     addFeaturedBadges(featuredItems);
   }
 
-  // Function: Build menu cards from data array
+  // Function: Build menu list items from data array
   function buildMenuCards(items, containerSelector) {
     var container = $(containerSelector);
     container.empty();
 
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
-      var card = $("<div>").addClass("card").attr("data-name", item.name);
+      var li = $("<li>").addClass("menu-item").attr("data-name", item.name);
 
-      if (item.image) {
-        var img = $("<img>").addClass("card-img").attr("src", item.image).attr("alt", item.name);
-        card.append(img);
-      }
+      var info = $("<div>").addClass("menu-item-info");
+      info.append($("<h3>").text(item.name));
+      info.append($("<p>").text(item.description));
+      li.append(info);
 
-      var body = $("<div>").addClass("card-body");
-      body.append($("<h3>").text(item.name));
-      body.append($("<p>").text(item.description));
-      body.append($("<span>").addClass("card-price").text(formatCurrency(item.price)));
-      card.append(body);
+      li.append($("<span>").addClass("menu-item-price").text(formatCurrency(item.price)));
 
-      container.append(card);
+      container.append(li);
     }
   }
 

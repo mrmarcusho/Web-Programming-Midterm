@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1507;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#d4380d;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#1a0a00;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="500" fill="url(#bg)"/>
+  <ellipse cx="600" cy="250" rx="400" ry="350" fill="url(#glow)"/>
+  <!-- Large pizza -->
+  <circle cx="600" cy="260" r="160" fill="#e8a849"/>
+  <circle cx="600" cy="260" r="150" fill="#d4943a"/>
+  <circle cx="600" cy="260" r="140" fill="#f0c56e"/>
+  <!-- Cheese patches -->
+  <ellipse cx="570" cy="230" rx="40" ry="25" fill="#fde68a" opacity="0.7"/>
+  <ellipse cx="640" cy="280" rx="35" ry="20" fill="#fde68a" opacity="0.6"/>
+  <ellipse cx="580" cy="300" rx="30" ry="18" fill="#fde68a" opacity="0.5"/>
+  <!-- Pepperoni -->
+  <circle cx="550" cy="220" r="18" fill="#b91c1c"/>
+  <circle cx="620" cy="200" r="15" fill="#991b1b"/>
+  <circle cx="670" cy="250" r="17" fill="#b91c1c"/>
+  <circle cx="560" cy="290" r="14" fill="#991b1b"/>
+  <circle cx="640" cy="310" r="16" fill="#b91c1c"/>
+  <circle cx="530" cy="260" r="13" fill="#991b1b"/>
+  <circle cx="600" cy="260" r="15" fill="#b91c1c"/>
+  <!-- Basil leaves -->
+  <ellipse cx="590" cy="240" rx="12" ry="6" fill="#16a34a" transform="rotate(-30 590 240)"/>
+  <ellipse cx="650" cy="280" rx="10" ry="5" fill="#15803d" transform="rotate(20 650 280)"/>
+  <ellipse cx="560" cy="310" rx="11" ry="5" fill="#16a34a" transform="rotate(-15 560 310)"/>
+  <!-- Decorative text area hint -->
+  <text x="600" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="16" fill="#a37030" opacity="0.6">HANDCRAFTED WITH LOVE</text>
+</svg>

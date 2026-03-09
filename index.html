@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="keywords" content="pizza, restaurant, delivery, Portland, handcrafted, Italian, Pizza Days, home">
-  <meta name="description" content="Pizza Days - Handcrafted pizza made with fresh ingredients since 2010. Order online or visit us in Portland.">
+  <meta name="keywords" content="Pizza Days, handcrafted pizza, wood-fired pizza, fresh ingredients, pizza delivery, Portland pizza">
   <title>Pizza Days | Handcrafted Pizza Since 2010</title>
   <link rel="stylesheet" href="css/styles.css">
   <!-- Page-specific styles (internal stylesheet) -->
@@ -52,53 +51,8 @@
       font-size: 0.95rem;
       line-height: 1.6;
     }
-    .reviews-grid {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -0.75rem;
-      margin-right: -0.75rem;
-    }
-    .reviews-grid > * {
-      width: 33.333%;
-      padding-left: 0.75rem;
-      padding-right: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .review-card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 1.8rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      border-left: 4px solid #fbbf24;
-      transition-property: transform, box-shadow;
-      transition-duration: 0.3s;
-      transition-timing-function: ease;
-      height: 100%;
-    }
-    .review-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    }
-    .review-stars {
-      color: #fbbf24;
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-    }
-    .review-card p {
-      color: #4a4a4a;
-      font-style: italic;
-      line-height: 1.6;
-    }
-    .review-author {
-      font-weight: 600;
-      color: #1a0a00;
-      margin-top: 0.8rem;
-      font-size: 0.9rem;
-      font-style: normal;
-    }
     @media (max-width: 768px) {
       .home-feature { width: 100%; }
-      .reviews-grid > * { width: 100%; }
     }
   </style>
 </head>
@@ -115,7 +69,12 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="catering.html">Catering</a></li>
           <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="locations.html">Locations</a></li>
         </ul>
       </nav>
     </div>
@@ -138,25 +97,16 @@
     </div>
     <div class="home-features">
       <div class="home-feature">
-        <div class="home-feature-inner">
-          <img src="images/fresh-ingredients.jpg" alt="Fresh vegetables and ingredients" class="home-feature-img">
-          <h3>Fresh Ingredients</h3>
-          <p>The best pizza made from only fresh ingredients so that every pizza you get has the best quality.</p>
-        </div>
+        <h3>Fresh Ingredients</h3>
+        <p>The best pizza made from only fresh ingredients so that every pizza you get has the best quality.</p>
       </div>
       <div class="home-feature">
-        <div class="home-feature-inner">
-          <img src="images/wood-fired-oven.jpg" alt="Wood-fired pizza oven" class="home-feature-img">
-          <h3>Wood-Fired Oven</h3>
-          <p>Our brick oven hits 800&deg;F, which gives every pizza that slightly charred, crispy crust you can't get from a regular oven.</p>
-        </div>
+        <h3>Wood-Fired Oven</h3>
+        <p>Our brick oven hits 800&deg;F, which gives every pizza that slightly charred, crispy crust you can't get from a regular oven.</p>
       </div>
       <div class="home-feature">
-        <div class="home-feature-inner">
-          <img src="images/pizza-delivery.jpg" alt="Pizza delivery on a bicycle" class="home-feature-img">
-          <h3>Fast Delivery</h3>
-          <p>We promise to get your pizza to you in 30 minutes or less. Orders over $25 get free delivery.</p>
-        </div>
+        <h3>Fast Delivery</h3>
+        <p>We promise to get your pizza to you in 30 minutes or less. Orders over $25 get free delivery.</p>
       </div>
     </div>
   </section>
@@ -202,15 +152,18 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-col">
+        <a href="index.html" class="logo-link"><img src="images/logo.svg" alt="Pizza Days Logo" style="height:40px; margin-bottom:0.5rem;"></a>
         <h3>Pizza Days</h3>
         <p>Handcrafted pizza made with love since 2010. Four locations across Portland.</p>
       </div>
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menu</a></li>
-          <li><a href="about.html">About Us</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="locations.html">Locations</a></li>
         </ul>
       </div>
       <div class="footer-col">

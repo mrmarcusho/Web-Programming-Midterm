@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <rect width="600" height="400" fill="#f5e6d3"/>
+  <!-- Brick wall background -->
+  <rect x="0" y="0" width="600" height="200" fill="#c4703f" opacity="0.3"/>
+  <line x1="0" y1="40" x2="600" y2="40" stroke="#b8633a" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="80" x2="600" y2="80" stroke="#b8633a" stroke-width="1" opacity="0.3"/>
+  <line x1="0" y1="120" x2="600" y2="120" stroke="#b8633a" stroke-width="1" opacity="0.3"/>
+  <!-- Wood-fired oven -->
+  <path d="M200 280 Q200 140 400 140 Q600 140 480 280 Z" fill="#8B4513" opacity="0.8"/>
+  <path d="M230 280 Q230 170 380 170 Q530 170 460 280 Z" fill="#1a0a00"/>
+  <!-- Fire -->
+  <ellipse cx="350" cy="260" rx="50" ry="20" fill="#f97316" opacity="0.8"/>
+  <path d="M330 260 Q335 220 350 230 Q365 220 370 260" fill="#fbbf24" opacity="0.9"/>
+  <path d="M340 260 Q345 235 350 240 Q355 235 360 260" fill="#fef3c7" opacity="0.8"/>
+  <!-- Counter -->
+  <rect x="0" y="280" width="600" height="120" fill="#92400e" opacity="0.6"/>
+  <rect x="0" y="280" width="600" height="8" fill="#78350f"/>
+  <!-- Rolling pin -->
+  <rect x="80" y="310" width="120" height="14" rx="7" fill="#d4a574"/>
+  <rect x="60" y="312" width="30" height="10" rx="5" fill="#c4956a"/>
+  <rect x="190" y="312" width="30" height="10" rx="5" fill="#c4956a"/>
+  <!-- Dough ball -->
+  <ellipse cx="500" cy="320" rx="40" ry="25" fill="#f5deb3"/>
+  <ellipse cx="500" cy="318" rx="38" ry="22" fill="#faebd7"/>
+  <text x="300" y="385" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#5c2d0e">Our Kitchen</text>
+</svg>

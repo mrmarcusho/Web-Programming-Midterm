@@ -1,178 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="contact Pizza Days, pizza restaurant contact, feedback, customer service, reach us">
-    <meta name="description" content="Contact Pizza Days — send us a message, give feedback, or reach out for catering inquiries.">
-    <title>Contact Us - Pizza Days</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="contact Pizza Days, phone, email, Tufts pizza, Medford pizza, feedback">
+  <meta name="description" content="Get in touch with Pizza Days. Send us a message or give us a call. Located near Tufts University.">
+  <title>Contact Us | Pizza Days</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span class="logo-text">Pizza Days</span>
-            </a>
-            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="locations.html">Our Stores</a></li>
-                    <li><a href="order.html">Order Online</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Banner -->
-    <div class="page-banner">
-        <h1>Contact Us</h1>
-        <p>We would love to hear from you</p>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Pizza Days Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Contact Content -->
-    <section class="page-content">
-        <div class="contact-wrapper">
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <h1>Contact Us</h1>
+    <p>We would love to hear from you. Drop us a line anytime.</p>
+  </section>
 
-            <!-- Contact Form -->
-            <div class="contact-form">
-                <h2>Send Us a Message</h2>
-                <form id="contactForm" novalidate>
+  <!-- Contact Form + Info -->
+  <section class="section">
+    <div class="two-col">
+      <!-- Contact Form -->
+      <div>
+        <h2>Send Us a Message</h2>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contact-name">Full Name *</label>
+            <input type="text" id="contact-name" name="name" placeholder="Your full name">
+            <div class="error-msg"></div>
+          </div>
 
-                    <!-- Text input -->
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" placeholder="John Smith" required>
-                        <span class="error-msg">Please enter your full name.</span>
-                    </div>
+          <div class="form-group">
+            <label for="contact-email">Email Address *</label>
+            <input type="email" id="contact-email" name="email" placeholder="you@example.com">
+            <div class="error-msg"></div>
+          </div>
 
-                    <!-- Email input -->
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                        <span class="error-msg">Please enter a valid email address.</span>
-                    </div>
+          <div class="form-group">
+            <label for="contact-phone">Phone Number</label>
+            <input type="tel" id="contact-phone" name="phone" placeholder="(781) 555-1234">
+            <div class="error-msg"></div>
+          </div>
 
-                    <!-- Tel input -->
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(217) 555-0000">
-                        <span class="error-msg">Please enter a valid phone number.</span>
-                    </div>
+          <div class="form-group">
+            <label for="contact-subject">Subject *</label>
+            <select id="contact-subject" name="subject">
+              <option value="">Select a subject...</option>
+              <option value="general">General Inquiry</option>
+              <option value="feedback">Feedback</option>
+              <option value="catering">Catering Request</option>
+              <option value="complaint">Complaint</option>
+              <option value="other">Other</option>
+            </select>
+            <div class="error-msg"></div>
+          </div>
 
-                    <!-- Select dropdown -->
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">-- Select a subject --</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="catering">Catering Request</option>
-                            <option value="careers">Careers</option>
-                            <option value="complaint">Complaint</option>
-                        </select>
-                        <span class="error-msg">Please select a subject.</span>
-                    </div>
+          <div class="form-group">
+            <label for="contact-message">Message *</label>
+            <textarea id="contact-message" name="message" placeholder="Tell us what's on your mind..."></textarea>
+            <div class="error-msg"></div>
+          </div>
 
-                    <!-- Textarea -->
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
-                        <span class="error-msg">Please enter your message.</span>
-                    </div>
-
-                    <!-- Radio buttons -->
-                    <div class="form-group">
-                        <label>Preferred Contact Method *</label>
-                        <div class="radio-group">
-                            <label>
-                                <input type="radio" name="contactMethod" value="email" required>
-                                Email
-                            </label>
-                            <label>
-                                <input type="radio" name="contactMethod" value="phone">
-                                Phone
-                            </label>
-                            <label>
-                                <input type="radio" name="contactMethod" value="either">
-                                Either
-                            </label>
-                        </div>
-                        <span class="error-msg">Please select a preferred contact method.</span>
-                    </div>
-
-                    <!-- Submit button -->
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <div class="checkbox-group">
+              <label><input type="checkbox" name="source" value="social"> Social Media</label>
+              <label><input type="checkbox" name="source" value="friend"> Friend/Family</label>
+              <label><input type="checkbox" name="source" value="search"> Google Search</label>
+              <label><input type="checkbox" name="source" value="other"> Other</label>
             </div>
+          </div>
 
-            <!-- Contact Info -->
-            <div class="contact-info">
-                <h2>Get in Touch</h2>
-                <p>Have a question, suggestion, or just want to say hello? Fill out the form or reach us directly using the information below.</p>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
 
-                <div class="contact-info-item">
-                    <strong>General Inquiries</strong>
-                    <span>info@pizzadays.com</span>
-                </div>
+      <!-- Contact Info -->
+      <div>
+        <h2>Get in Touch</h2>
+        <h3>Main Location</h3>
+        <p>364 Boston Ave<br>Medford, MA 02155</p>
+        <p class="mt-1"><strong>Phone:</strong> (781) 396-7800</p>
+        <p><strong>Email:</strong> hello@pizzadays.com</p>
 
-                <div class="contact-info-item">
-                    <strong>Catering</strong>
-                    <span>catering@pizzadays.com</span>
-                </div>
+        <h3 class="mt-2">Hours</h3>
+        <ul class="feature-list">
+          <li>Monday - Sunday: 11am - 3am</li>
+        </ul>
 
-                <div class="contact-info-item">
-                    <strong>Careers</strong>
-                    <span>jobs@pizzadays.com</span>
-                </div>
+        <h3 class="mt-2">Delivery Locations</h3>
+        <ol class="numbered-list">
+          <li>Medford / Hillside &mdash; 364 Boston Ave</li>
+          <li>Carmichael Hall &mdash; 200 Packard Ave</li>
+          <li>Dewick-MacPhie Hall &mdash; 25 Latin Way</li>
+          <li>South Hall &mdash; 105 College Ave</li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-                <div class="contact-info-item">
-                    <strong>Main Office</strong>
-                    <span>123 Main Street, Springfield, IL 62701</span>
-                </div>
+  <!-- Locations from JSON -->
+  <section class="section" style="background: #fff;">
+    <div class="section-title">
+      <h2>Our Locations</h2>
+    </div>
+    <div class="card-grid" id="locations-container">
+      <!-- Built by locations.js from JSON -->
+    </div>
+  </section>
 
-                <div class="contact-info-item">
-                    <strong>Phone</strong>
-                    <span>(217) 555-0101</span>
-                </div>
+  <!-- Thank You Modal -->
+  <div class="modal-overlay" id="thank-you-modal">
+    <div class="modal">
+      <h2>Thank You!</h2>
+      <p>Your message has been received. We will get back to you within 24 hours.</p>
+      <button class="btn btn-primary modal-close">Got It</button>
+    </div>
+  </div>
 
-                <p class="mt-20">For store-specific questions, please visit our <a href="locations.html">store locations</a> page for direct phone numbers and hours.</p>
-            </div>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="index.html" class="logo-link"><img src="images/logo.svg" alt="Pizza Days Logo" style="height:40px; margin-bottom:0.5rem;"></a>
+        <h3>Pizza Days</h3>
+        <p>Handcrafted pizza made with love since 2005. Delivering across the Tufts campus.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>364 Boston Ave<br>Medford, MA 02155</p>
+        <p>(781) 396-7800</p>
+        <p>hello@pizzadays.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="footer-year"></span> Pizza Days. All rights reserved.
+    </div>
+  </footer>
 
-        </div>
-    </section>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/locations.js"></script>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span>Pizza Days</span>
-            </a>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Our Stores</a></li>
-                <li><a href="order.html">Order Online</a></li>
-                <li><a href="catering.html">Catering</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <p>&copy; 2026 Pizza Days. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <button class="back-to-top" aria-label="Back to top">&#9650;</button>
-
-    <script src="js/main.js"></script>
-    <script src="js/contact.js"></script>
 </body>
 </html>

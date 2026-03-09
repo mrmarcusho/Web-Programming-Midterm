@@ -1,127 +1,106 @@
-// ===== contact.js — Form validation with thank you popup =====
+/* ==========================================================================
+   Pizza Days - Contact Page JavaScript
+   Handles: Form validation (jQuery), thank-you popup
+   ========================================================================== */
 
-(function() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
+$(document).ready(function() {
 
-    // Validation helper functions (Requirement 8b)
-    function isNotEmpty(value) {
-        return value.trim().length > 0;
+  // Form validation rules (associative array)
+  var validationRules = {
+    name: { required: true, minLength: 2, message: "Please enter your name (at least 2 characters)." },
+    email: { required: true, pattern: "email", message: "Please enter a valid email address." },
+    phone: { required: false, pattern: "phone", message: "Please enter a valid phone number." },
+    subject: { required: true, message: "Please select a subject." },
+    message: { required: true, minLength: 10, message: "Please enter a message (at least 10 characters)." }
+  };
+
+  // Contact form submission
+  $("#contact-form").on("submit", function(e) {
+    e.preventDefault();
+    var isValid = validateContactForm();
+
+    if (isValid) {
+      showThankYouModal();
+      this.reset();
+      $(".form-group").removeClass("has-error");
+    }
+  });
+
+  // Function: Validate the contact form
+  function validateContactForm() {
+    var valid = true;
+
+    // Validate name
+    var nameVal = $("#contact-name").val().trim();
+    if (nameVal.length < validationRules.name.minLength) {
+      showError("contact-name", validationRules.name.message);
+      valid = false;
+    } else {
+      clearError("contact-name");
     }
 
-    function isValidEmail(email) {
-        var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return pattern.test(email);
+    // Validate email
+    var emailVal = $("#contact-email").val().trim();
+    if (!validateEmail(emailVal)) {
+      showError("contact-email", validationRules.email.message);
+      valid = false;
+    } else {
+      clearError("contact-email");
     }
 
-    function isValidPhone(phone) {
-        if (phone.trim() === '') return true; // phone is optional
-        var pattern = /^[\d\s\-\(\)\+]{7,15}$/;
-        return pattern.test(phone.trim());
+    // Validate phone (optional but must be valid format if provided)
+    var phoneVal = $("#contact-phone").val().trim();
+    if (phoneVal !== "" && !validatePhone(phoneVal)) {
+      showError("contact-phone", validationRules.phone.message);
+      valid = false;
+    } else {
+      clearError("contact-phone");
     }
 
-    function isSelected(selectElement) {
-        return selectElement.value !== '';
+    // Validate subject
+    var subjectVal = $("#contact-subject").val();
+    if (!subjectVal || subjectVal === "") {
+      showError("contact-subject", validationRules.subject.message);
+      valid = false;
+    } else {
+      clearError("contact-subject");
     }
 
-    function isRadioChecked(name) {
-        var radios = document.getElementsByName(name);
-        for (var i = 0; i < radios.length; i++) {
-            if (radios[i].checked) return true;
-        }
-        return false;
+    // Validate message
+    var messageVal = $("#contact-message").val().trim();
+    if (messageVal.length < validationRules.message.minLength) {
+      showError("contact-message", validationRules.message.message);
+      valid = false;
+    } else {
+      clearError("contact-message");
     }
 
-    // Show or clear error on a form group
-    function setError(fieldId, hasError) {
-        var field = document.getElementById(fieldId);
-        if (!field) return;
-        var group = field.closest('.form-group');
-        if (group) {
-            if (hasError) {
-                group.classList.add('has-error');
-            } else {
-                group.classList.remove('has-error');
-            }
-        }
-    }
+    return valid;
+  }
 
-    function setRadioError(hasError) {
-        var radios = document.getElementsByName('contactMethod');
-        if (radios.length === 0) return;
-        var group = radios[0].closest('.form-group');
-        if (group) {
-            if (hasError) {
-                group.classList.add('has-error');
-            } else {
-                group.classList.remove('has-error');
-            }
-        }
-    }
+  // Function: Show field error
+  function showError(fieldId, message) {
+    var group = $("#" + fieldId).closest(".form-group");
+    group.addClass("has-error");
+    group.find(".error-msg").text(message).show();
+  }
 
-    // Form submission handler
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+  // Function: Clear field error
+  function clearError(fieldId) {
+    var group = $("#" + fieldId).closest(".form-group");
+    group.removeClass("has-error");
+    group.find(".error-msg").hide();
+  }
 
-        var valid = true;
+  // Function: Show thank-you modal
+  function showThankYouModal() {
+    $("#thank-you-modal").addClass("active");
+  }
 
-        // Validate name
-        var nameVal = document.getElementById('name').value;
-        if (!isNotEmpty(nameVal)) {
-            setError('name', true);
-            valid = false;
-        } else {
-            setError('name', false);
-        }
+  // Clear errors on input
+  $("input, select, textarea").on("input change", function() {
+    $(this).closest(".form-group").removeClass("has-error");
+    $(this).closest(".form-group").find(".error-msg").hide();
+  });
 
-        // Validate email
-        var emailVal = document.getElementById('email').value;
-        if (!isValidEmail(emailVal)) {
-            setError('email', true);
-            valid = false;
-        } else {
-            setError('email', false);
-        }
-
-        // Validate phone (optional but must be valid format if provided)
-        var phoneVal = document.getElementById('phone').value;
-        if (!isValidPhone(phoneVal)) {
-            setError('phone', true);
-            valid = false;
-        } else {
-            setError('phone', false);
-        }
-
-        // Validate subject
-        var subjectEl = document.getElementById('subject');
-        if (!isSelected(subjectEl)) {
-            setError('subject', true);
-            valid = false;
-        } else {
-            setError('subject', false);
-        }
-
-        // Validate message
-        var messageVal = document.getElementById('message').value;
-        if (!isNotEmpty(messageVal)) {
-            setError('message', true);
-            valid = false;
-        } else {
-            setError('message', false);
-        }
-
-        // Validate radio buttons
-        if (!isRadioChecked('contactMethod')) {
-            setRadioError(true);
-            valid = false;
-        } else {
-            setRadioError(false);
-        }
-
-        // If valid, show thank you and reset form
-        if (valid) {
-            alert('Thank you for contacting Pizza Days! We will get back to you soon.');
-            form.reset();
-        }
-    });
-})();
+});

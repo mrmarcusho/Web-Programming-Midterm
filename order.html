@@ -1,111 +1,328 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="order pizza online, Pizza Days delivery, pizza carry out, order food online">
-    <meta name="description" content="Order Pizza Days online, by phone, or through our app. Fast delivery and easy carry out.">
-    <title>Order Online - Pizza Days</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="order pizza online, delivery, pickup, Pizza Days, Tufts pizza delivery, Medford pizza">
+  <meta name="description" content="Order your favorite Pizza Days pizza online for delivery or pickup near Tufts University.">
+  <title>Order Online | Pizza Days</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .order-layout {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
+    .order-layout > *:first-child {
+      width: 60%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .order-layout > *:last-child {
+      width: 40%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    @media (max-width: 768px) {
+      .order-layout > *:first-child,
+      .order-layout > *:last-child {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="index.html" class="logo-link">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span class="logo-text">Pizza Days</span>
-            </a>
-            <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="menu.html">Menu</a></li>
-                    <li><a href="locations.html">Our Stores</a></li>
-                    <li><a href="order.html" class="active">Order Online</a></li>
-                    <li><a href="catering.html">Catering</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Banner -->
-    <div class="page-banner">
-        <h1>Order Online</h1>
-        <p>Get your favorite pizza delivered fast</p>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="images/logo.svg" alt="Pizza Days Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="specials.html">Specials</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Order Content -->
-    <section class="page-content">
-        <h2 class="text-center">How to Order</h2>
-        <p class="text-center">Choose the ordering method that works best for you. We make it easy to get fresh Pizza Days delivered right to your door or ready for pickup.</p>
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <h1>Order Online</h1>
+    <p>Build your perfect order and we will have it ready for you</p>
+  </section>
 
-        <!-- Order Methods -->
-        <div class="order-methods">
-            <div class="order-method">
-                <div class="icon">&#128222;</div>
-                <h3>Call Us</h3>
-                <p>Call your nearest Pizza Days location to place your order over the phone. Our friendly staff will help you choose the perfect meal.</p>
-                <a href="locations.html" class="btn btn-outline mt-20">Find a Store</a>
+  <!-- Order Form -->
+  <section class="section">
+    <div class="order-layout">
+      <div>
+        <h2>Your Details</h2>
+        <form id="order-form" novalidate>
+          <div class="form-group">
+            <label for="order-name">Full Name *</label>
+            <input type="text" id="order-name" name="name" placeholder="Your full name">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-email">Email Address *</label>
+            <input type="email" id="order-email" name="email" placeholder="you@example.com">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-phone">Phone Number *</label>
+            <input type="tel" id="order-phone" name="phone" placeholder="(781) 555-1234">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Order Type *</label>
+            <div class="radio-group">
+              <label><input type="radio" name="orderType" value="delivery" checked> Delivery</label>
+              <label><input type="radio" name="orderType" value="pickup"> Pickup</label>
             </div>
-            <div class="order-method">
-                <div class="icon">&#128187;</div>
-                <h3>Order Online</h3>
-                <p>Browse our full menu, customize your order, and pay online. Choose delivery or carry out at checkout.</p>
-                <a href="menu.html" class="btn mt-20">View Menu</a>
+          </div>
+
+          <div class="form-group" id="address-group">
+            <label for="order-address">Delivery Address *</label>
+            <input type="text" id="order-address" name="address" placeholder="200 Packard Ave, Medford, MA">
+            <div class="error-msg"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-location">Pickup/Delivery Location *</label>
+            <select id="order-location" name="location">
+              <option value="">Choose a location...</option>
+              <option value="medford">Medford / Hillside - 364 Boston Ave</option>
+              <option value="carmichael">Carmichael Hall - 200 Packard Ave</option>
+              <option value="dewick">Dewick-MacPhie Hall - 25 Latin Way</option>
+              <option value="south">South Hall - 105 College Ave</option>
+            </select>
+            <div class="error-msg"></div>
+          </div>
+
+          <h2 class="mt-2">Select Your Items</h2>
+          <h3>Pizzas</h3>
+          <div class="form-group">
+            <div class="checkbox-group" style="flex-direction: column;">
+              <label><input type="checkbox" name="items" value="margherita" data-price="14.99"> Classic Margherita - $14.99</label>
+              <label><input type="checkbox" name="items" value="pepperoni" data-price="16.99"> Pepperoni Classico - $16.99</label>
+              <label><input type="checkbox" name="items" value="meat-lover" data-price="18.99"> The Meat Lover - $18.99</label>
+              <label><input type="checkbox" name="items" value="veggie" data-price="15.99"> Garden Veggie - $15.99</label>
+              <label><input type="checkbox" name="items" value="bbq-chicken" data-price="17.99"> BBQ Chicken - $17.99</label>
+              <label><input type="checkbox" name="items" value="hawaiian" data-price="16.49"> Hawaiian - $16.49</label>
             </div>
-            <div class="order-method">
-                <div class="icon">&#128241;</div>
-                <h3>Mobile App</h3>
-                <p>Download the Pizza Days app for the fastest ordering experience. Save your favorites and earn rewards with every order.</p>
-                <a href="#" class="btn btn-outline mt-20">Coming Soon</a>
+          </div>
+
+          <h3>Sides &amp; Drinks</h3>
+          <div class="form-group">
+            <div class="checkbox-group" style="flex-direction: column;">
+              <label><input type="checkbox" name="items" value="breadsticks" data-price="6.99"> Garlic Breadsticks - $6.99</label>
+              <label><input type="checkbox" name="items" value="salad" data-price="8.99"> Caesar Salad - $8.99</label>
+              <label><input type="checkbox" name="items" value="wings" data-price="10.99"> Buffalo Wings - $10.99</label>
+              <label><input type="checkbox" name="items" value="soda" data-price="2.49"> Fountain Drink - $2.49</label>
             </div>
+          </div>
+
+          <div class="form-group">
+            <label for="order-notes">Special Instructions</label>
+            <textarea id="order-notes" name="notes" placeholder="Any allergies or special requests?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Place Order</button>
+        </form>
+      </div>
+
+      <!-- Order Summary Sidebar -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div id="summary-items">
+          <p style="color:#999;">No items selected yet.</p>
         </div>
-
-        <hr class="section-divider">
-
-        <!-- Ordering Steps (ol requirement) -->
-        <h2 class="text-center">Easy Ordering in 5 Steps</h2>
-        <div class="order-steps">
-            <ol>
-                <li>Choose your nearest Pizza Days location for delivery or pickup</li>
-                <li>Browse our menu and select your favorite items</li>
-                <li>Customize your order with extra toppings or special requests</li>
-                <li>Provide your delivery address or select carry out</li>
-                <li>Place your order and enjoy fresh pizza in 30 minutes or less</li>
-            </ol>
+        <div class="order-total" id="order-total" style="display:none;">
+          <span>Total</span>
+          <span id="total-amount">$0.00</span>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="text-center mt-20">
-            <p>Have questions about your order? <a href="contact.html">Contact us</a> and we will be happy to help.</p>
-        </div>
-    </section>
+  <!-- Thank You Modal -->
+  <div class="modal-overlay" id="order-modal">
+    <div class="modal">
+      <h2>Order Placed!</h2>
+      <p>Thanks for your order! We will have it ready soon. You will receive a confirmation email shortly.</p>
+      <button class="btn btn-primary modal-close">Awesome</button>
+    </div>
+  </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <a href="index.html" class="footer-logo">
-                <img src="images/logo.svg" alt="Pizza Days Logo">
-                <span>Pizza Days</span>
-            </a>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="locations.html">Our Stores</a></li>
-                <li><a href="order.html">Order Online</a></li>
-                <li><a href="catering.html">Catering</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <p>&copy; 2026 Pizza Days. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <a href="index.html" class="logo-link"><img src="images/logo.svg" alt="Pizza Days Logo" style="height:40px; margin-bottom:0.5rem;"></a>
+        <h3>Pizza Days</h3>
+        <p>Handcrafted pizza made with love since 2005. Delivering across the Tufts campus.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="order.html">Order Online</a></li>
+          <li><a href="catering.html">Catering</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="locations.html">Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p>364 Boston Ave<br>Medford, MA 02155</p>
+        <p>(781) 396-7800</p>
+        <p>hello@pizzadays.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="footer-year"></span> Pizza Days. All rights reserved.
+    </div>
+  </footer>
 
-    <button class="back-to-top" aria-label="Back to top">&#9650;</button>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
 
-    <script src="js/main.js"></script>
+      // Toggle address field based on order type
+      $('input[name="orderType"]').on("change", function() {
+        if ($(this).val() === "delivery") {
+          $("#address-group").show();
+        } else {
+          $("#address-group").hide();
+        }
+      });
+
+      // Update order summary as items are checked
+      $('input[name="items"]').on("change", function() {
+        updateOrderSummary();
+      });
+
+      function updateOrderSummary() {
+        var summaryDiv = $("#summary-items");
+        var totalDiv = $("#order-total");
+        summaryDiv.empty();
+        var total = 0;
+        var hasItems = false;
+
+        $('input[name="items"]:checked').each(function() {
+          hasItems = true;
+          var label = $(this).parent().text().trim();
+          var price = parseFloat($(this).data("price"));
+          total += price;
+          var item = $("<div>").addClass("order-item");
+          item.append($("<span>").text(label.split(" - ")[0]));
+          item.append($("<span>").text(formatCurrency(price)));
+          summaryDiv.append(item);
+        });
+
+        if (hasItems) {
+          totalDiv.show();
+          $("#total-amount").text(formatCurrency(total));
+        } else {
+          summaryDiv.html('<p style="color:#999;">No items selected yet.</p>');
+          totalDiv.hide();
+        }
+      }
+
+      // Order form validation & submission
+      $("#order-form").on("submit", function(e) {
+        e.preventDefault();
+        var valid = true;
+
+        // Validate name
+        var name = $("#order-name").val().trim();
+        if (name.length < 2) {
+          showOrderError("order-name", "Please enter your name.");
+          valid = false;
+        } else {
+          clearOrderError("order-name");
+        }
+
+        // Validate email
+        var email = $("#order-email").val().trim();
+        if (!validateEmail(email)) {
+          showOrderError("order-email", "Please enter a valid email.");
+          valid = false;
+        } else {
+          clearOrderError("order-email");
+        }
+
+        // Validate phone
+        var phone = $("#order-phone").val().trim();
+        if (!validatePhone(phone)) {
+          showOrderError("order-phone", "Please enter a valid phone number.");
+          valid = false;
+        } else {
+          clearOrderError("order-phone");
+        }
+
+        // Validate address if delivery
+        if ($('input[name="orderType"]:checked').val() === "delivery") {
+          var addr = $("#order-address").val().trim();
+          if (addr.length < 5) {
+            showOrderError("order-address", "Please enter a delivery address.");
+            valid = false;
+          } else {
+            clearOrderError("order-address");
+          }
+        }
+
+        // Validate location
+        var loc = $("#order-location").val();
+        if (!loc) {
+          showOrderError("order-location", "Please select a location.");
+          valid = false;
+        } else {
+          clearOrderError("order-location");
+        }
+
+        // Validate at least one item
+        if ($('input[name="items"]:checked').length === 0) {
+          alert("Please select at least one item.");
+          valid = false;
+        }
+
+        if (valid) {
+          $("#order-modal").addClass("active");
+          $("#order-form")[0].reset();
+          $("#summary-items").html('<p style="color:#999;">No items selected yet.</p>');
+          $("#order-total").hide();
+        }
+      });
+
+      function showOrderError(id, msg) {
+        var group = $("#" + id).closest(".form-group");
+        group.addClass("has-error");
+        group.find(".error-msg").text(msg).show();
+      }
+
+      function clearOrderError(id) {
+        var group = $("#" + id).closest(".form-group");
+        group.removeClass("has-error");
+        group.find(".error-msg").hide();
+      }
+
+    });
+  </script>
+
 </body>
 </html>
